@@ -1,0 +1,168 @@
+@import './variableColor.scss';
+
+.el-select {
+    margin-left: 21px;
+    font-family: $family3;
+}
+.el-scrollbar {
+    font-family: $family3;
+}
+
+.el-date-editor.el-input {
+    position: relative !important;
+    font-size: 14px;
+    display: inline-block !important;
+    width: 100% !important;
+    margin-left: 44px;
+}
+
+.el-input__inner {
+    width: 310px !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    font-size: 16px !important;
+    border-radius: 0px !important;
+    border: none !important;
+    background: $order_input_bg;
+    color: $order_input_color;
+    font-family: $family3;
+
+    &:focus {
+        // border: $order_input_focus_border;
+    }
+}
+.el-select-dropdown__item.selected {
+    color: $order_input_selected_color;
+}
+
+.el-textarea {
+    width: 420px !important;
+    height: 95% !important;
+    .el-textarea__inner {
+        height: 100% !important;
+        border-radius: 0 !important;
+        color: #333;
+        padding-top: 10px !important;
+        font-size: 16px !important;
+        border: none !important;
+        border-radius: 0px !important;
+        background: #fff;
+        font-family: $family3;
+
+        &::placeholder {
+            color: $order_input_placeholder;
+        }
+
+        &:focus {
+            border: $order_input_focus_border !important;
+        }
+    }
+}
+
+.el-checkbox__label {
+    p,
+    h3 {
+        font-size: 14px;
+        color: $order_check_desc_color;
+        font-weight: normal;
+    }
+
+    span {
+        color: $order_check_span_color;
+        text-decoration: underline;
+    }
+}
+
+.form-submit {
+    span {
+        letter-spacing: 5px;
+    }
+    width: 320px !important;
+    height: 72px !important;
+    // opacity: 0 !important;
+    border-radius: 20px !important;
+    font-size: 28px !important;
+    background-position: center !important;
+    background-color: #d1b373!important;
+    background-image: $order_submit_bg;
+    margin: 0 auto !important;
+    margin-top: 20px !important;
+    transition: all 0.3s !important;
+    color: $order_submit_color;
+    // z-index: 10;
+    border: none !important;
+    font-family: $family3;
+
+    &.is-disabled {
+        background-color: #d1b373!important;
+        opacity: 0.6;
+    }
+
+    svg {
+        margin-right: 15px;
+    }
+
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: '';
+        width: 40%;
+        height: 100%;
+        display: block;
+        background: #fff;
+        position: absolute;
+        transform: skewX(-20deg);
+        left: -10%;
+        opacity: 0;
+        top: 0;
+        z-index: 5;
+        transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    }
+
+    &:hover::before {
+        opacity: 1;
+        width: 90%;
+        left: 140%;
+    }
+    &.is-disabled:hover::before {
+        opacity: 0;
+    }
+}
+
+/* 螢幕尺寸標準 */
+/* 手機尺寸 */
+@media only screen and (max-width: 767px) {
+    .el-input__inner {
+        width: 100% !important;
+    }
+
+    .el-textarea .el-textarea__inner {
+        width: 100% !important;
+        height: 120px !important;
+    }
+
+    .el-select {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .checkbox {
+        margin-top: 0;
+        white-space: nowrap;
+
+        label {
+            padding-left: 28px !important;
+            line-height: 20px !important;
+        }
+    }
+
+    .form-submit {
+        width: 90% !important;
+        font-size: 16px !important;
+        margin: 10px auto !important;
+    }
+
+    .el-date-editor.el-input {
+        margin-left: 0px;
+    }
+}
